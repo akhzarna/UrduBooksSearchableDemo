@@ -380,8 +380,8 @@ export default class SignInScreen extends React.Component {
               <TouchableOpacity
               style = {{marginTop : 22,marginLeft:40}}
               onPress = {() => this.forgotPasswordAction()}>
-                  <Text style={{color: COLORS.dark, fontWeight: 'bold',fontSize:15}}>
-                    Forgot a Password?
+              <Text style={{color: COLORS.dark, fontWeight: 'bold',fontSize:15}}>
+                Forgot a Password?
                   </Text>
               </TouchableOpacity>
 

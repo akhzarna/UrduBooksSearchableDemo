@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button, TextInput, Alert } from 'react-native';
+import { View, Text, StyleSheet, Button, TextInput, Alert, TouchableOpacity } from 'react-native';
 
 export default class App extends React.Component {
 
@@ -8,35 +8,73 @@ export default class App extends React.Component {
 
     this.state={
       a:10,
+      flag:10,
+      b:90,
+      username:'',
     }
+
+    console.log('Contructor');
   }
 
   UNSAFE_componentWillMount(){
+    console.log('WillMount');
+
 
   }
 
 
-  // Write Functions Here
-  render(){
+  akhzarAction(){
+    Alert.alert('Btn Pressed');
+  }
 
+  render(){
+    console.log('Render');
 
     return (
 
       <View style={{flex:1, flexDirection:'column'}}>
 
-      <Text> SP19BSEB Testing State is = {this.state.a} </Text>
-
+      <Text style={{fontSize:26}}> SP19BSEC Testing State is = {this.state.username} </Text>
 
         <View style={{flex:0.20}}>
           <Text> Login Screen </Text>
 
         </View>
         <View style={{flex:0.40}}>
-          <TextInput style={{backgroundColor:'lightgrey', marginBottom:10}} />
-          <TextInput style={{backgroundColor:'lightgrey'}} />
+
+        <TextInput
+        placeholder="Username *"
+        style={{backgroundColor:'lightgrey', marginBottom:10}}
+        value = {this.state.username}
+        onChangeText = {(value) => this.setState({username : value})}
+        />
+
+        <TextInput
+        placeholder="Password *"
+        style={{backgroundColor:'lightgrey'}}
+        value = {this.state.username}
+        onChangeText = {(value) => this.setState({username : value})}/>
 
         </View>
         <View style={{flex:0.40}}>
+
+
+        <TouchableOpacity style={{
+          backgroundColor: 'green',
+          height: 50,
+          borderRadius: 5,
+          justifyContent: 'center',
+          alignItems: 'center',
+          marginTop: 30
+          }}
+         onPress = {() => this.akhzarAction()}>
+
+            <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 18}}>
+               LOG IN
+            </Text>
+
+        </TouchableOpacity>
+
           <Button
           title="Sin In"
           color="#841584"
@@ -50,7 +88,6 @@ export default class App extends React.Component {
           />
 
         </View>
-
       </View>
 
     );
@@ -58,18 +95,13 @@ export default class App extends React.Component {
 
   componentDidMount(){
     console.log('DidMount');
-    this.setState({a:1800});
-    // Alert.alert(''+a)
+    this.setState({flag:50000})
   }
-
 }
 
 const styles = StyleSheet.create({
 
 });
-
-
-
 
 
 
