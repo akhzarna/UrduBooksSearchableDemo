@@ -1,26 +1,30 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button, TextInput } from 'react-native';
-
-var a = 10;
+import { View, Text, StyleSheet, Button, TextInput, Alert } from 'react-native';
 
 export default class App extends React.Component {
 
   constructor(props){
     super(props);
-    this.state={
 
+    this.state={
+      a:10,
     }
   }
 
+  UNSAFE_componentWillMount(){
+
+  }
+
+
   // Write Functions Here
   render(){
-    return (
 
+
+    return (
 
       <View style={{flex:1, flexDirection:'column'}}>
 
-      <Text> SP19BSEB </Text>
-
+      <Text> SP19BSEB Testing State is = {this.state.a} </Text>
 
 
         <View style={{flex:0.20}}>
@@ -51,6 +55,13 @@ export default class App extends React.Component {
 
     );
   }
+
+  componentDidMount(){
+    console.log('DidMount');
+    this.setState({a:1800});
+    // Alert.alert(''+a)
+  }
+
 }
 
 const styles = StyleSheet.create({
