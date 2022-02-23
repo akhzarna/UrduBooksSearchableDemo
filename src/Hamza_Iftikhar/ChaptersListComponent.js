@@ -32,6 +32,7 @@
 
     constructor(props){
       super(props);
+
       console.log(this.props.route.params.finalArray);
 
         //     var finalArray=[];
